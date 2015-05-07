@@ -9,57 +9,62 @@
 angular
     .module('core')
     .controller('HomeController', ['$scope',
-        'getCurrentPosition', 'getWeather',
-        function($scope, getCurrentPosition, getWeather) {
+        '$http',
+        '$cordovaVibration',
+        '$cordovaNetwork',
+        '$cordovaGeolocation',
+        function($scope, $http, $cordovaVibration, $cordovaNetwork, $cordovaGeolocation) {
             $scope.moduleName = 'Home Module';
 
-            // getting weather for http test
-            getCurrentPosition(function(position) {
-                getWeather(
-                    position.coors.latitude,
-                    position.coord.longitude,
-                    function(location, weather) {
-                        $scope.location = location;
-                        $scope.weater = weather
-                    }
-                )
-            });
+            // http
+            $http.defaults.useXDomain = true;
+
+            $scope.useHttp = function() {
+                $http.get('https://jsonp.afeld.me/?url=http://jsonview.com/example.json')
+                    .success(function(data) {
+                        console.log(data);
+                        alert(data.awesome);
+                    });
+            };
+            // vibro
+            $scope.vibrate = function() {
+                $cordovaVibration.vibrate([100, 200, 100, 500, 200, 500, 100, 200, 100, 500, 200, 500]);
+            };
+
+            // net
+            $scope.networkType = null;
+            $scope.connectionType = null;
+
+            document.addEventListener("deviceready", function () {
+                $scope.networkType = $cordovaNetwork.getNetwork();
+
+                if ($cordovaNetwork.isOnline()) {
+                    $scope.connectionType = 'Online';
+                }
+                else if ($cordovaNetwork.isOffline()) {
+                    $scope.connectionType = 'Offline';
+                }
+                else {
+                    $scope.errorMsg = 'Error getting isOffline / isOnline methods';
+                }
+            }, false);
+
+            // geolocation
+            $scope.getLocation = function () {
+
+                $cordovaGeolocation
+                    .getCurrentPosition({timeout: 10000, enableHighAccuracy: false})
+                    .then(function (position) {
+                        console.log("position found");
+                        $scope.position = position;
+                        // long = position.coords.longitude
+                        // lat = position.coords.latitude
+                    }, function (err) {
+                        console.log("unable to find location");
+                        $scope.errorMsg = "Error : " + err.message;
+                    });
+            };
+
+
         }
-    ])
-    .factory('getCurrentPosition', function(deviceReady, $document, $window, $rootScope){
-        return function(done) {
-            deviceReady(function(){
-                navigator.geolocation.getCurrentPosition(function(position){
-                    $rootScope.$apply(function(){
-                        done(position);
-                    });
-                }, function(error){
-                    $rootScope.$apply(function(){
-                        throw new Error('Unable to retreive position');
-                    });
-                });
-            });
-        };
-    })
-    .factory('getWeather', function($http){
-        return function(lat, lng, done) {
-            $http({method: 'GET', url: 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lng})
-                .success(function(data, status, headers, config) {
-                    done(data.name, data.weather[0].description);
-                })
-                .error(function(data, status, headers, config) {
-                    throw new Error('Unable to get weather');
-                });
-        };
-    })
-    .factory('deviceReady', function(){
-        return function(done) {
-            if (typeof window.cordova === 'object') {
-                document.addEventListener('deviceready', function () {
-                    done();
-                }, false);
-            } else {
-                done();
-            }
-        };
-    });
+    ]);
