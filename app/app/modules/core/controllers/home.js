@@ -19,11 +19,29 @@ angular
             // http
             $http.defaults.useXDomain = true;
 
-            $scope.useHttp = function() {
+            $scope.useCORS = function() {
                 $http.get('https://jsonp.afeld.me/?url=http://jsonview.com/example.json')
                     .success(function(data) {
                         console.log(data);
                         alert(data.awesome);
+                    });
+            };
+
+            $scope.useGET = function() {
+                $http.get('http://jsonview.com/example.json')
+                    .success(function(data) {
+                        console.log(data);
+                        alert(data.awesome);
+                    });
+            };
+
+            $scope.useJSONP = function() {
+                $http.jsonp('https://jsonp.afeld.me/?callback=JSON_CALLBACK&url=http://jsonview.com/example.json')
+                    .success(function(data) {
+                        console.log(data);
+                        alert(data.notLink);
+                    }).error(function() {
+                        alert('no data');
                     });
             };
             // vibro
