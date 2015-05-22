@@ -394,6 +394,17 @@ module.exports = function(grunt) {
                 configFile: 'karma.conf.js',
                 singleRun: true
             }
+        },
+
+        less : {
+            development: {
+                options: {
+//                    paths: ['<%= yeoman.app %>']
+                },
+                files: {
+                    "<%= yeoman.app %>/css/app.css": "<%= yeoman.app %>/less/app.less"
+                }
+            }
         }
     });
 

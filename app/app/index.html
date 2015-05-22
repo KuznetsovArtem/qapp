@@ -16,6 +16,7 @@
         <!-- injector:css -->
         <link rel="stylesheet" href="css/customcordova.css">
         <link rel="stylesheet" href="css/demo.css">
+        <link rel="stylesheet" href="css/app.css">
         <!-- endinjector -->
     <!-- endbuild -->
     <script src="cordova.js"></script>
@@ -24,53 +25,53 @@
 
   <body>
     <!-- =================== Navigation bar =================== -->
-    <header class="navbar navbar-default navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand visible-xs" href="#!/">
-                        home
-                    </a>
-                    <a class="navbar-brand visible-xs" href="#!/login">
-                        Login
-                    </a>
-                    <a class="navbar-brand visible-xs" href="#!/profile">
-                        Profile
-                    </a>
-                    <a class="navbar-brand visible-xs" href="#!/mail">
-                        Mail
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!--<header class="navbar navbar-default navbar-fixed-top">-->
+        <!--<div class="navbar-inner">-->
+            <!--<div class="container">-->
+                <!--<div class="navbar-header">-->
+                    <!--<a class="navbar-brand visible-xs" href="#!/">-->
+                        <!--home-->
+                    <!--</a>-->
+                    <!--<a class="navbar-brand visible-xs" href="#!/login">-->
+                        <!--Login-->
+                    <!--</a>-->
+                    <!--<a class="navbar-brand visible-xs" href="#!/profile">-->
+                        <!--Profile-->
+                    <!--</a>-->
+                    <!--<a class="navbar-brand visible-xs" href="#!/mail">-->
+                        <!--Mail-->
+                    <!--</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</header>-->
 
-    <div class="header-placeholder"></div>
-    <div role="main">
-        <section class="bs-header text-center" id="overview">
-            <div class="container">
-                <h1 id="app-heading">
-                    The App
-                </h1>
-            </div>
-        </section>
+    <!--<div class="header-placeholder"></div>-->
+    <!--<div role="main">-->
+        <!--<section class="bs-header text-center" id="overview">-->
+            <!--<div class="container">-->
+                <!--<h1 id="app-heading">-->
+                    <!--The App-->
+                <!--</h1>-->
+            <!--</div>-->
+        <!--</section>-->
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-12">-->
                     <section id="uiview" ui-view></section>
-                </div>
-            </div>
-        </div>
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
         <!-- /.container -->
-    </div>
+    <!--</div>-->
     <!-- /.main -->
 
-    <footer class="footer">
-        <div class="container">
-            <p>Code licensed under <a href="https://github.com/keshavos/generator-angularjs-cordova/">MIT License</a>.</p>
-        </div>
-    </footer>
+    <!--<footer class="footer">-->
+        <!--<div class="container">-->
+            <!--<p>Code licensed under <a href="https://github.com/keshavos/generator-angularjs-cordova/">MIT License</a>.</p>-->
+        <!--</div>-->
+    <!--</footer>-->
 
     <!-- build:js scripts/vendor.js -->
         <!-- injector:bowerjs -->
@@ -102,6 +103,7 @@
         <script src="modules/login/config/routes.js"></script>
         <script src="modules/mail/config/routes.js"></script>
         <script src="modules/profile/config/routes.js"></script>
+        <script src="modules/core/services/localization.js"></script>
         <script src="modules/mail/services/mailModel.js"></script>
         <script src="modules/core/controllers/home.js"></script>
         <script src="modules/login/controllers/login.js"></script>

@@ -1,18 +1,28 @@
-<section>
-    <form>
+<div class="container login-page">
+    <div class="big-logo">
+        <div class="logo"></div>
+    </div>
+
+    <form class="form-horizontal">
         <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control input-lg" id="exampleInputEmail1" placeholder="Enter email">
+            <label for="exampleInputEmail1" class="col-xs-2 control-label">{{translate('login')}}</label>
+            <div class="col-xs-10">
+                <input type="email" class="form-control input-lg" id="exampleInputEmail1" placeholder="Enter email">
+            </div>
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control input-lg" id="exampleInputPassword1" placeholder="Password">
+            <label for="exampleInputPassword1" class="col-xs-2 control-label">Password</label>
+            <div class="col-xs-10">
+                <input type="password" class="form-control input-lg" id="exampleInputPassword1" placeholder="Password">
+            </div>
         </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> Save me
-            </label>
-        </div>
-        <button type="submit" class="btn btn-lg btn-success">Login</button>
     </form>
-</section>
+
+    <div class="row`">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-6"><a href="#TODO/forgoPwd">Forgot pwd?</a></div>
+        <div class="col-xs-12">
+        </div>
+    </div>
+    <button class="login-btn">{{translate('login button')}}</button>
+</div>

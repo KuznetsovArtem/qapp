@@ -10,8 +10,9 @@ angular
     .module('login')
     .controller('LoginController', [
         '$scope',
-        function($scope) {
-
+        'localizationService',
+        function($scope, localizationService) {
+            console.log('OUOUOU', localizationService);
 
         }
 ]);

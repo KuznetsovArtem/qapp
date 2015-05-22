@@ -1,0 +1,24 @@
+html,
+body {
+  height: 100%;
+}
+.login-page {
+  height: 100%;
+  background-color: #ffffff;
+}
+.login-page .big-logo {
+  height: 400px;
+  min-height: 50%;
+}
+.login-page .big-logo .logo {
+  width: 225px;
+  height: 135px;
+  background-image: url("/img/ui/ui.png");
+  margin: 0 auto;
+}
+.login-page .login-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #3c6397;
+  color: #e1e1e1;
+}
