@@ -6,19 +6,67 @@ body {
   height: 100%;
   background-color: #ffffff;
 }
-.login-page .big-logo {
-  height: 400px;
-  min-height: 50%;
-}
 .login-page .big-logo .logo {
   width: 225px;
   height: 135px;
-  background-image: url("/img/ui/ui.png");
-  margin: 0 auto;
+  background-image: url("../img/ui/ui.png");
+  margin: 95px auto;
 }
-.login-page .login-btn {
-  width: 100%;
+.login-page .header-block {
+  margin: 10px 0;
+}
+.login-page .header-block .content {
   padding: 10px;
+  text-align: center;
   background-color: #3c6397;
   color: #e1e1e1;
+}
+.login-page .login-form {
+  color: #959595;
+}
+.login-page .login-form label {
+  height: 46px;
+  line-height: 46px;
+  padding-left: 25px;
+}
+.login-page .login-form input {
+  border-radius: 0;
+}
+.login-page .login-help-block a {
+  padding-right: 10px;
+}
+.login-page .login-btn {
+  border: none;
+  border-top: 1px solid #959595;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 100;
+  width: 100%;
+  background-color: #3c6397;
+  font-size: 20px;
+  color: #e1e1e1;
+}
+.login-page .login-btn:hover {
+  text-decoration: none;
+}
+.header {
+  border-bottom: 1px solid #959595;
+}
+.header .logo {
+  height: 50px;
+  background-image: url("../img/ui/ui.png");
+  background-position: 300px -3px;
+}
+.header .nav-btn {
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  font-weight: 900;
+}
+.header .nav-btn.active {
+  height: 55px;
 }

@@ -29,30 +29,35 @@ module.exports = function(grunt) {
                 }
             },
 
-            jsUnitTest: {
-                files: ['<%= yeoman.app %>/modules/*/tests/unit/*.js'],
-                tasks: ['karma:unit']
-            },
+            //jsUnitTest: {
+            //    files: ['<%= yeoman.app %>/modules/*/tests/unit/*.js'],
+            //    tasks: ['karma:unit']
+            //},
 
             styles: {
                 files: ['<%= yeoman.app %>/css/**/*.css'],
                 tasks: ['newer:copy:styles', 'autoprefixer']
             },
 
+            less: {
+                files: '<%= yeoman.app %>/less/*.less',
+                tasks: ['less']
+            },
+
             gruntfile: {
                 files: ['Gruntfile.js']
             },
 
-            livereload: {
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                },
-                files: [
-                    '<%= yeoman.app %>/*.html',
-                    '.tmp/styles/{,*/}*.css',
-                    '<%= yeoman.app %>/img/**/*.{png,jpg,jpeg,gif,webp,svg}'
-                ]
-            }
+            //livereload: {
+            //    options: {
+            //        livereload: '<%= connect.options.livereload %>'
+            //    },
+            //    files: [
+            //        '<%= yeoman.app %>/*.html',
+            //        '.tmp/styles/{,*/}*.css',
+            //        '<%= yeoman.app %>/img/**/*.{png,jpg,jpeg,gif,webp,svg}'
+            //    ]
+            //}
         },
 
         connect: {
@@ -402,7 +407,7 @@ module.exports = function(grunt) {
 //                    paths: ['<%= yeoman.app %>']
                 },
                 files: {
-                    "<%= yeoman.app %>/css/app.css": "<%= yeoman.app %>/less/app.less"
+                    '<%= yeoman.app %>/css/app.css': '<%= yeoman.app %>/less/app.less'
                 }
             }
         }
@@ -421,6 +426,7 @@ module.exports = function(grunt) {
             'concurrent:server',
             'autoprefixer',
             'connect:livereload',
+            'less',
             'watch'
         ]);
     });

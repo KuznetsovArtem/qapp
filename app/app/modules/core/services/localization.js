@@ -7,11 +7,14 @@ angular
         return {
             $get: ['$rootScope', function($rootScope) {
                 var data = {
-                    'login button' : 'Войти',
-                    login : 'Логин'
+                    'login.loginButton'           : 'ВОЙТИ',
+                    'login.login'                 : 'Логин',
+                    'login.password'              : 'Пароль',
+                    'login.signUp'                : 'Зарегистрироваться',
+                    'login.forgotPwd'             : 'Забыли пароль?'
                 };
 
-                $rootScope.translate = function(key) {
+                var translate = function(key) {
                     console.log(key);
                     if (data[key]) {
                         return data[key]
@@ -19,6 +22,8 @@ angular
                         return key
                     }
                 };
+
+                $rootScope.L = translate;
 
                 return {
                     getMessage : function(key) {

@@ -13,7 +13,7 @@ angular
         '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
 
-            $urlRouterProvider.otherwise('/');
+            $urlRouterProvider.otherwise('/login');
 
             /**
              * @ngdoc event
