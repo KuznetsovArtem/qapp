@@ -10,7 +10,8 @@ angular
     .module('profile')
     .controller('ProfileController', [
         '$scope',
-        function($scope) {
+        'localizationService',
+        function($scope, localizationService) {
 
 
         }

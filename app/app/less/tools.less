@@ -1,3 +1,11 @@
+.page-fix() {
+  padding-top: @header-height;
+  min-height: 100%;
+  margin: 0 0; // rm container margins
+  .row {
+    padding: 0 0; // rm row padding for 100% width fields
+  }
+}
 .float-btn() {
   border: none;
   border-top: 1px solid @brand-gray-4;

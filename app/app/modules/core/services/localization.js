@@ -11,7 +11,13 @@ angular
                     'login.login'                 : 'Логин',
                     'login.password'              : 'Пароль',
                     'login.signUp'                : 'Зарегистрироваться',
-                    'login.forgotPwd'             : 'Забыли пароль?'
+                    'login.forgotPwd'             : 'Забыли пароль?',
+                    'profile.lang'                  : 'Язык',
+                    'profile.city'                  : 'Мой город',
+                    'profile.userData'              : 'Личные даные',
+                    'profile.letterToDev'           : 'Написать разработчикам',
+                    'profile.licenseAgreement'      : 'Лицензионное соглашение',
+                    'profile.about'                 : 'О программе'
                 };
 
                 var translate = function(key) {

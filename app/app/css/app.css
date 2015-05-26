@@ -54,6 +54,19 @@ body {
 }
 .header {
   border-bottom: 1px solid #959595;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+}
+.header.container {
+  margin: 0;
+  padding: 0;
+}
+.header.container > .row {
+  padding: 0;
+  margin: 0 0 0 -15px;
 }
 .header .logo {
   height: 50px;
@@ -73,4 +86,26 @@ body {
 .header .nav-btn.active {
   height: 55px;
   background-color: #fec24d;
+}
+.profile-page {
+  background-color: #cccccc;
+  color: #959595;
+  padding-top: 55px;
+  min-height: 100%;
+  margin: 0 0;
+}
+.profile-page .row {
+  padding: 0 0;
+}
+.profile-page .profile-field {
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #e1e1e1;
+}
+.profile-page .profile-field.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+#uiview {
+  height: 100%;
 }
